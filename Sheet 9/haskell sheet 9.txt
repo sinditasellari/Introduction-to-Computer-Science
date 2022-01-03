@@ -1,0 +1,13 @@
+3a)
+variables :: BoolExpr -> [Variable]
+variables T = []
+variables F = []
+variables (Var v) = [v]
+variables (Not v) = variables v
+variables (And e1 e2) = sort (union (variables e1) (variables e2))
+variables (Or e1 e2) = sort (union (variables e1) (variables e2))
+
+3b)
+subsets :: [Variable] -> [[Variable]]
+subsets [] = [[]]
+subsets (x:xs) = subsets xs ++ (map (x:) (subsets xs))
