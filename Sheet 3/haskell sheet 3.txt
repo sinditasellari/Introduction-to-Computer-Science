@@ -1,0 +1,4 @@
+rotate :: Int -> [a] -> [a]
+rotate _ [] = []
+rotate 0 x = x
+rotate n (x:xs) = rotate (n-1) (xs ++ [x])
