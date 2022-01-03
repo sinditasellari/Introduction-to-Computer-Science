@@ -1,0 +1,6 @@
+pow :: Integer -> Integer -> Integer
+pow x n
+  | n == 0          = 1
+  | n == 1          = x
+  | n `mod` 2 == 0  = (pow x (n 'div' 2)) * (pow x (n `div` 2))
+  | otherwise       = x * pow x (n-1)
