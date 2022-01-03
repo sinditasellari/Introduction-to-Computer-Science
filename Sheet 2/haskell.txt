@@ -1,0 +1,6 @@
+divisors n = [x | x <- [1..n], (mod n x) == 0 ]
+divisors 210
+
+
+
+[(a,b,c) | a <- [1..100], b <- [a+1..100], c <- [b+1..100], a*a + b*b == c*c]
